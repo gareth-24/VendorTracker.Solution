@@ -27,6 +27,12 @@ namespace VendorTracker.Models
     {
       return _instances;
     }
+
+    public static Vendor Find(int searchId)
+    //finds a specific vendor from the static list by its id
+    {
+      return _instances[searchId-1];
+    }    
   }
 
 }
