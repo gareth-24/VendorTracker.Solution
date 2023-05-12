@@ -17,8 +17,15 @@ namespace VendorTracker.Models
     }
 
     public static void ClearAll()
+    //clears the list of vendors
     {
       _instances.Clear();
+    }
+
+    public static List<Vendor> GetAll()
+    //returns a list of venders
+    {
+      return _instances;
     }
   }
 
