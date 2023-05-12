@@ -10,18 +10,20 @@
       crossorigin="anonymous">
   </head>
   <body>
-    <h2>Order Details:</h2>
+    <div class="container">
+      <h1 class="display-5">Order Details:</h1><br>
 
-    <h3>@Model["order"].Title</h3>
-    <h5>From vendor: @Model["vendor"].Name</h5>
-    <ul>
-      <li>Description: @Model["order"].Description</li>
-      <li>Date: @Model["order"].Date</li>
-      <li>Price: @Model["order"].Price</li>
-    </ul>
+      <h3>@Model["order"].Title</h3>
+      <h5>from vendor: @Model["vendor"].Name</h5>
+      <ul>
+        <li>Description: @Model["order"].Description</li>
+        <li>Date: @Model["order"].Date</li>
+        <li>Price: $@Model["order"].Price</li>
+      </ul>
 
-    <a href='/vendors/@Model["vendor"].Id/orders/new'>Add Another Order</a><br>
-    <a href='/vendors'>Return to Vendors</a><br>
-    <p><a href='/'>Back to Homepage</a></p>
+      <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add Another Order</a></p>
+      <p><a href='/vendors'>Return to Vendors</a></p>
+      <p><a href='/'>Back to Homepage</a></p>
+    </div>
   </body>
 </html>

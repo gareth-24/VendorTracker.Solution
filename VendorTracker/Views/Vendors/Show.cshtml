@@ -10,19 +10,21 @@
       crossorigin="anonymous">
   </head>
   <body>
-    @using VendorTracker.Models;
+    <div class="container">
+      @using VendorTracker.Models;
 
-    <h3>Here are all the orders from the vendor:</h3>
+      <h1 class="display-5">Orders from the Vendor:</h1><br>
 
-    <ol>
-    @foreach (Order order in @Model["orders"])
-    {
-      <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
-    }
-    </ol>
+      <ol>
+      @foreach (Order order in @Model["orders"])
+      {
+        <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
+      }
+      </ol>
 
-    <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
-    <p><a href='/vendors'>Return to vendor list</a></p>
-    <p><a href='/'>Return to Home Page</a></p>
+      <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a New Order</a></p>
+      <p><a href='/vendors'>Return to Vendors</a></p>
+      <p><a href='/'>Return to Home</a></p>
+    </div>
   </body>
 </html>
