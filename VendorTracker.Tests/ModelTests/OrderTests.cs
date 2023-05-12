@@ -27,7 +27,7 @@ namespace VendorTracker.Tests
       //Arrange
       string title = "test order";
       //Act
-      Order newOrder = new Order("test order", "test description", "May 12", 10);
+      Order newOrder = new Order(title, "test description", "May 12", 10);
       string result = newOrder.Title;
       //Assert
       Assert.AreEqual(title, result);
@@ -44,6 +44,30 @@ namespace VendorTracker.Tests
       string result = newOrder.Title;
 
       Assert.AreEqual(updatedTitle, result);
+    }
+
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      string description = "test description";
+
+      Order newOrder = new Order("test order", description, "May 12", 10);
+      string result = newOrder.Description;
+
+      Assert.AreEqual(description, result);
+    }
+
+    [TestMethod]
+    public void SetDescription_SetsDescription_String()
+    {
+      string description = "test description";
+      Order newOrder = new Order("title", description, "May 12", 10);
+
+      string updatedDescription = "test description 2";
+      newOrder.Description = updatedDescription;
+      string result = newOrder.Description;
+
+      Assert.AreEqual(updatedDescription, result);
     }
   }
 }
