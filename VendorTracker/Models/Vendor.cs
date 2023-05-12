@@ -32,7 +32,13 @@ namespace VendorTracker.Models
     //finds a specific vendor from the static list by its id
     {
       return _instances[searchId-1];
-    }    
+    }
+
+    public void AddOrder(Order order)
+    //adds an order to the vendor object
+    {
+      Orders.Add(order);
+    }
   }
 
 }
